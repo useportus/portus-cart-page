@@ -333,4 +333,11 @@
 .pcp-admin-brand-copy { min-width:0; }
 .pcp-admin-brand-copy h2 { flex-wrap:wrap; letter-spacing:-.6px; }
 .pcp-admin-brand-copy p { margin:0; color:#626675; line-height:1.6; }
+.pcp-overview { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:0 0 24px; }
+.pcp-overview-card { min-width:0; padding:22px 20px; border:1px solid #dfe3ef; border-radius:14px; background:linear-gradient(145deg,#fff,#fbfcff); box-shadow:0 10px 24px #00053a06; }
+.pcp-overview-card h3 { margin:0 0 10px; color:#626675; font-size:12px; line-height:1.4; font-weight:700; text-transform:uppercase; }
+.pcp-overview-card .pcp-overview-value { margin:0 0 7px; color:#00053a; font-size:20px; line-height:1.35; font-weight:600; overflow-wrap:anywhere; }
+.pcp-overview-card .pcp-overview-description { margin:0; color:#626675; font-size:13px; line-height:1.6; overflow-wrap:anywhere; }
+@media(max-width:1100px) { .pcp-overview { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .pcp-overview { grid-template-columns:1fr; gap:12px; } .pcp-overview-card { padding:18px; } }
 @media(max-width:600px) { .pcp-admin-header > .pcp-admin-brand { gap:14px; } .pcp-admin-logo { width:52px; height:52px; flex-basis:52px; border-radius:5px; } .pcp-admin-brand-copy h2 { font-size:24px; gap:8px; } }

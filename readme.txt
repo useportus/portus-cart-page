@@ -5,7 +5,7 @@ Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.4.12
+Stable tag: 1.4.13
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,7 @@ This plugin changes the cart page only. It does not add a side cart, replace che
 * Customize the primary color, button text color, corners and spacing.
 * Change the cart heading and description.
 * Settings under WooCommerce > Portus Cart Page, with an illustrative visual preview.
+* Four read-only dashboard cards show installed version, cart-page setup, edition/license display status and active theme.
 * Keep WooCommerce notices and supported extension hooks.
 * Compatibility handling for the Royal Addons cart widget's duplicate wrappers and coupon field, scoped to Portus rendering.
 
@@ -106,6 +107,10 @@ Settings are retained to avoid accidental loss. To remove them permanently after
 4. Refined empty-cart state with a return-to-shop button.
 
 == Changelog ==
+
+= 1.4.13 =
+* Add four responsive overview cards below the settings header with installed version, cart-page setup, edition/license display status and active theme.
+* Use live local configuration and the separate Pro add-on's cached display status without extra license requests.
 
 = 1.4.12 =
 * Display the product logo beside the plugin name in the shared Free and Pro settings header.

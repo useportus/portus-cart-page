@@ -19,7 +19,7 @@ Give the cart page a clearer presentation while keeping WooCommerce responsible 
 - Responsive empty-cart presentation.
 - Settings for primary color, button text color, corners, spacing, cart heading, and description.
 - Local SVG icons with WebKit-compatible masks and image fallbacks.
-- A settings panel with the Portus logo and an illustrative appearance preview.
+- A settings panel with the Portus logo, four dynamic overview cards, and an illustrative appearance preview.
 - Scoped frontend styles and supported WooCommerce extension hooks.
 
 This plugin changes the cart page only. It does not add a side cart, replace checkout, create orders, or process payments. It can run alongside the separate [Portus Cart](https://github.com/useportus/portus-cart) side-cart plugin.
@@ -54,7 +54,7 @@ Exclude the cart and checkout from page caching. Theme overrides and third-party
 
 ## Free and Pro
 
-This public repository mirrors the Free WordPress.org edition of Portus Cart Page, currently version **1.4.12**.
+This public repository mirrors the Free WordPress.org edition of Portus Cart Page, currently version **1.4.13**.
 
 All functionality included here works without a license key, payment, trial period, or usage limit. Native cross-sell recommendations are included in Free.
 

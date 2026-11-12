@@ -120,6 +120,61 @@ final class Settings {
         wp_safe_redirect(admin_url('admin.php?page=portus-cart-page&reset=1')); exit;
     }
 
+    /** Read-only overview; license verification remains in the separate Pro add-on. */
+    public static function overview(array $settings): array {
+        $pro = defined('PORTUS_CART_PAGE_PRO_VERSION');
+        $version = $pro ? (string) PORTUS_CART_PAGE_PRO_VERSION : PORTUS_CART_PAGE_VERSION;
+        /* translators: %s is the installed Free plugin version. */
+        $version_description = $pro ? sprintf(__('Base Free %s instalada neste site.', 'portus-cart-page'), PORTUS_CART_PAGE_VERSION) : __('Edição Free instalada neste site.', 'portus-cart-page');
+        $cart_value = __('Configurar página', 'portus-cart-page');
+        $cart_description = __('Defina a página de carrinho nas configurações avançadas do WooCommerce.', 'portus-cart-page');
+        if (!class_exists('WooCommerce') || !function_exists('wc_get_page_id')) {
+            $cart_value = __('WooCommerce inativo', 'portus-cart-page');
+            $cart_description = __('Ative o WooCommerce para usar a página de carrinho.', 'portus-cart-page');
+        } else {
+            $cart_id = wc_get_page_id('cart');
+            if ($cart_id > 0 && get_post_status($cart_id) === 'publish') {
+                $cart_value = empty($settings['enabled']) ? __('Desativado', 'portus-cart-page') : __('Ativado', 'portus-cart-page');
+                /* translators: %s is the title of the configured cart page. */
+                $cart_description = sprintf(__('Página configurada: %s.', 'portus-cart-page'), wp_strip_all_tags(get_the_title($cart_id)));
+                if (!empty($settings['enabled']) && empty($settings['replace_blocks']) && has_block('woocommerce/cart', get_post($cart_id))) {
+                    $cart_value = __('Bloco nativo', 'portus-cart-page');
+                    $cart_description = __('A substituição do bloco Carrinho está desativada.', 'portus-cart-page');
+                }
+            } elseif ($cart_id > 0) {
+                $cart_value = __('Página não publicada', 'portus-cart-page');
+                $cart_description = __('Publique a página de carrinho configurada no WooCommerce.', 'portus-cart-page');
+            }
+        }
+        $license_value = $pro ? __('Pro instalado', 'portus-cart-page') : __('Free', 'portus-cart-page');
+        $license_description = $pro ? __('Consulte a aba Licença Pro para verificar atualizações e suporte.', 'portus-cart-page') : __('Todos os recursos Free funcionam sem chave de licença.', 'portus-cart-page');
+        // Consume only the add-on's public, cached display status. No key access,
+        // HTTP request, activation or feature gating is implemented in Free.
+        $provider = ['\\Portus\\CartPagePro\\Pro', 'license_status'];
+        if ($pro && is_callable($provider)) {
+            $cached = call_user_func($provider);
+            $labels = [
+                'valid' => __('Ativa', 'portus-cart-page'),
+                'expired' => __('Expirada', 'portus-cart-page'),
+                'inactive' => __('Não ativada', 'portus-cart-page'),
+                'invalid' => __('Verificar licença', 'portus-cart-page'),
+                'unavailable' => __('Verificação indisponível', 'portus-cart-page'),
+            ];
+            $license_value = $labels[$cached['status'] ?? 'unavailable'] ?? $labels['unavailable'];
+            $license_description = __('Último status informado pela extensão Pro. Consulte a aba Licença Pro.', 'portus-cart-page');
+        }
+        $theme = wp_get_theme();
+        $parent = $theme->parent();
+        /* translators: %s is the name of the parent theme. */
+        $theme_description = $parent ? sprintf(__('Tema filho de %s.', 'portus-cart-page'), $parent->get('Name')) : __('Tema ativo neste site.', 'portus-cart-page');
+        return [
+            ['label' => __('Versão', 'portus-cart-page'), 'value' => $version, 'description' => $version_description],
+            ['label' => __('Carrinho', 'portus-cart-page'), 'value' => $cart_value, 'description' => $cart_description],
+            ['label' => __('Licença', 'portus-cart-page'), 'value' => $license_value, 'description' => $license_description],
+            ['label' => __('Tema', 'portus-cart-page'), 'value' => $theme->get('Name'), 'description' => $theme_description],
+        ];
+    }
+
     public static function page(): void {
         if (!current_user_can('manage_woocommerce')) { return; }
         $s = self::all(); $pro = defined('PORTUS_CART_PAGE_PRO_VERSION');
@@ -127,6 +182,11 @@ final class Settings {
         ?>
         <div class="wrap pcp-admin">
             <h1 class="screen-reader-text">Portus Cart Page</h1><header class="pcp-admin-header"><div class="pcp-admin-brand"><img class="pcp-admin-logo" src="<?php echo esc_url(plugin_dir_url(PORTUS_CART_PAGE_FILE) . 'assets/cart-page-icon.svg?ver=' . PORTUS_CART_PAGE_VERSION); ?>" alt="" aria-hidden="true" width="64" height="64"><div class="pcp-admin-brand-copy"><span class="pcp-eyebrow">PORTUS / WOOCOMMERCE</span><h2>Portus Cart Page <span class="pcp-badge"><?php echo $pro ? 'PRO' : 'FREE'; ?></span></h2><p><?php esc_html_e('Um carrinho à altura da sua loja.', 'portus-cart-page'); ?></p></div></div><a class="button" href="<?php echo esc_url(function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url()); ?>" target="_blank" rel="noopener"><?php esc_html_e('Ver carrinho ↗', 'portus-cart-page'); ?></a></header>
+            <section class="pcp-overview" aria-label="<?php esc_attr_e('Informações do plugin e da loja', 'portus-cart-page'); ?>">
+                <?php foreach (self::overview($s) as $card) : ?>
+                <div class="pcp-overview-card"><h3><?php echo esc_html($card['label']); ?></h3><p class="pcp-overview-value"><?php echo esc_html($card['value']); ?></p><p class="pcp-overview-description"><?php echo esc_html($card['description']); ?></p></div>
+                <?php endforeach; ?>
+            </section>
             <?php settings_errors(); ?>
             <?php // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only success indicator; does not process or modify settings.
             if (isset($_GET['reset']) || isset($_GET['imported'])) : ?><div class="notice notice-success"><p><?php esc_html_e('Configurações atualizadas.', 'portus-cart-page'); ?></p></div><?php endif; ?>

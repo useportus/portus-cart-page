@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Portus Cart Page
  * Description: Uma página de carrinho moderna e personalizável, com as regras nativas do WooCommerce.
- * Version: 1.4.12
+ * Version: 1.4.13
  * Author: Portus
  * Author URI: https://useportus.com/
  * Domain Path: /languages
@@ -16,7 +16,7 @@
  */
 namespace Portus\CartPage;
 defined('ABSPATH') || exit;
-define('PORTUS_CART_PAGE_VERSION', '1.4.12');
+define('PORTUS_CART_PAGE_VERSION', '1.4.13');
 define('PORTUS_CART_PAGE_FILE', __FILE__);
 define('PORTUS_CART_PAGE_DIR', plugin_dir_path(__FILE__));
 require_once __DIR__ . '/includes/class-settings.php';

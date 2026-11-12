@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Portus Cart Page 1.4.12\n"
+"Project-Id-Version: Portus Cart Page 1.4.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/portus-cart-page\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-11T19:06:32+00:00\n"
+"POT-Creation-Date: 2026-11-12T15:06:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: portus-cart-page\n"
@@ -134,151 +134,279 @@ msgstr ""
 msgid "Acesso negado."
 msgstr ""
 
-#: includes/class-settings.php:126
-msgid "Geral"
+#. translators: %s is the installed Free plugin version.
+#: includes/class-settings.php:128
+#, php-format
+msgid "Base Free %s instalada neste site."
 msgstr ""
 
-#: includes/class-settings.php:126
-msgid "Aparência"
-msgstr ""
-
-#: includes/class-settings.php:126
-msgid "Conteúdo"
-msgstr ""
-
-#: includes/class-settings.php:126
-msgid "Recursos Pro"
-msgstr ""
-
-#: includes/class-settings.php:126
-msgid "Ajuda"
+#. translators: %s is the installed Free plugin version.
+#: includes/class-settings.php:128
+msgid "Edição Free instalada neste site."
 msgstr ""
 
 #: includes/class-settings.php:129
-msgid "Um carrinho à altura da sua loja."
+msgid "Configurar página"
 msgstr ""
 
-#: includes/class-settings.php:129
-msgid "Ver carrinho ↗"
+#: includes/class-settings.php:130
+msgid "Defina a página de carrinho nas configurações avançadas do WooCommerce."
 msgstr ""
 
 #: includes/class-settings.php:132
-msgid "Configurações atualizadas."
+msgid "WooCommerce inativo"
 msgstr ""
 
 #: includes/class-settings.php:133
-msgid "Configurações"
+msgid "Ative o WooCommerce para usar a página de carrinho."
+msgstr ""
+
+#: includes/class-settings.php:137
+msgid "Desativado"
+msgstr ""
+
+#: includes/class-settings.php:137
+msgid "Ativado"
+msgstr ""
+
+#. translators: %s is the title of the configured cart page.
+#: includes/class-settings.php:139
+#, php-format
+msgid "Página configurada: %s."
+msgstr ""
+
+#: includes/class-settings.php:141
+msgid "Bloco nativo"
+msgstr ""
+
+#: includes/class-settings.php:142
+msgid "A substituição do bloco Carrinho está desativada."
 msgstr ""
 
 #: includes/class-settings.php:145
-msgid "A apresentação é aplicada à página definida como carrinho no WooCommerce. O conteúdo salvo da página é preservado. Desative a substituição do bloco se quiser manter o Cart Block original."
+msgid "Página não publicada"
 msgstr ""
 
 #: includes/class-settings.php:146
-msgid "A extensão Pro adiciona layouts, resumo fixo, barra de ação no celular, progresso para frete grátis e personalização avançada."
+msgid "Publique a página de carrinho configurada no WooCommerce."
 msgstr ""
 
-#: includes/class-settings.php:146
-msgid "Conhecer o Pro"
+#: includes/class-settings.php:149
+msgid "Pro instalado"
 msgstr ""
 
-#: includes/class-settings.php:146
-msgid "A URL comercial pode ser configurada na aba Geral."
+#: includes/class-settings.php:149
+msgid "Free"
 msgstr ""
 
-#: includes/class-settings.php:148
-msgid "Salvar configurações"
+#: includes/class-settings.php:150
+msgid "Consulte a aba Licença Pro para verificar atualizações e suporte."
 msgstr ""
 
-#: includes/class-settings.php:151
-msgid "Como começar"
-msgstr ""
-
-#: includes/class-settings.php:151
-msgid "Ative o WooCommerce e configure as páginas de carrinho e checkout."
-msgstr ""
-
-#: includes/class-settings.php:151
-msgid "Ative a apresentação Portus em Geral. O shortcode e o bloco de carrinho serão apresentados com o layout Portus."
-msgstr ""
-
-#: includes/class-settings.php:151
-msgid "Você também pode usar [portus_cart_page] na página de carrinho."
-msgstr ""
-
-#: includes/class-settings.php:151
-msgid "Ajuste o visual e verifique compras, cupons e frete em uma loja de testes antes de publicar."
-msgstr ""
-
-#: includes/class-settings.php:151
-msgid "A prévia ao lado usa produtos e valores ilustrativos. Frete, impostos, cupons e validações da loja são executados pelo WooCommerce. O plugin não modifica o checkout."
-msgstr ""
-
-#: includes/class-settings.php:151
-msgid "Evite cache de página no carrinho e no checkout. A substituição do Cart Block usa a renderização clássica: extensões exclusivas do bloco precisam ser verificadas separadamente."
-msgstr ""
-
-#: includes/class-settings.php:152
-msgid "Usar com Elementor"
-msgstr ""
-
-#: includes/class-settings.php:153
-msgid "Edite a página definida como carrinho em WooCommerce → Configurações → Avançado. Adicione um único widget Shortcode com [portus_cart_page]. Você pode colocar banners e textos ao redor dele. Configure o interior do carrinho neste painel; os produtos e o resumo não são widgets individuais do Elementor."
-msgstr ""
-
-#: includes/class-settings.php:154
-msgid "Shortcode e bloco de carrinho"
-msgstr ""
-
-#: includes/class-settings.php:155
-msgid "No editor clássico, use [woocommerce_cart] ou [portus_cart_page], apenas uma vez. No editor de blocos, mantenha o Cart Block existente e ative sua substituição em Geral. O Portus apresenta o carrinho clássico sem reescrever a página. Para usar extensões exclusivas do Cart Block, desative essa substituição."
-msgstr ""
-
-#: includes/class-settings.php:156
-msgid "Estoque e quantidades"
+#: includes/class-settings.php:150
+msgid "Todos os recursos Free funcionam sem chave de licença."
 msgstr ""
 
 #: includes/class-settings.php:157
-msgid "O botão + respeita o limite de compra e o estoque do WooCommerce, incluindo vendas sob encomenda quando permitidas. Produtos vendidos individualmente têm limite de uma unidade. Ao usar − com uma unidade, o item é removido pelo WooCommerce, que oferece a opção de desfazer. Sem JavaScript, use o campo de quantidade, Atualizar carrinho e o botão de remoção."
+msgid "Ativa"
 msgstr ""
 
 #: includes/class-settings.php:158
+msgid "Expirada"
+msgstr ""
+
+#: includes/class-settings.php:159
+msgid "Não ativada"
+msgstr ""
+
+#: includes/class-settings.php:160
+msgid "Verificar licença"
+msgstr ""
+
+#: includes/class-settings.php:161
+msgid "Verificação indisponível"
+msgstr ""
+
+#: includes/class-settings.php:164
+msgid "Último status informado pela extensão Pro. Consulte a aba Licença Pro."
+msgstr ""
+
+#. translators: %s is the name of the parent theme.
+#: includes/class-settings.php:169
+#, php-format
+msgid "Tema filho de %s."
+msgstr ""
+
+#. translators: %s is the name of the parent theme.
+#: includes/class-settings.php:169
+msgid "Tema ativo neste site."
+msgstr ""
+
+#: includes/class-settings.php:171
+msgid "Versão"
+msgstr ""
+
+#: includes/class-settings.php:172
+msgid "Carrinho"
+msgstr ""
+
+#: includes/class-settings.php:173
+msgid "Licença"
+msgstr ""
+
+#: includes/class-settings.php:174
+msgid "Tema"
+msgstr ""
+
+#: includes/class-settings.php:181
+msgid "Geral"
+msgstr ""
+
+#: includes/class-settings.php:181
+msgid "Aparência"
+msgstr ""
+
+#: includes/class-settings.php:181
+msgid "Conteúdo"
+msgstr ""
+
+#: includes/class-settings.php:181
+msgid "Recursos Pro"
+msgstr ""
+
+#: includes/class-settings.php:181
+msgid "Ajuda"
+msgstr ""
+
+#: includes/class-settings.php:184
+msgid "Um carrinho à altura da sua loja."
+msgstr ""
+
+#: includes/class-settings.php:184
+msgid "Ver carrinho ↗"
+msgstr ""
+
+#: includes/class-settings.php:185
+msgid "Informações do plugin e da loja"
+msgstr ""
+
+#: includes/class-settings.php:192
+msgid "Configurações atualizadas."
+msgstr ""
+
+#: includes/class-settings.php:193
+msgid "Configurações"
+msgstr ""
+
+#: includes/class-settings.php:205
+msgid "A apresentação é aplicada à página definida como carrinho no WooCommerce. O conteúdo salvo da página é preservado. Desative a substituição do bloco se quiser manter o Cart Block original."
+msgstr ""
+
+#: includes/class-settings.php:206
+msgid "A extensão Pro adiciona layouts, resumo fixo, barra de ação no celular, progresso para frete grátis e personalização avançada."
+msgstr ""
+
+#: includes/class-settings.php:206
+msgid "Conhecer o Pro"
+msgstr ""
+
+#: includes/class-settings.php:206
+msgid "A URL comercial pode ser configurada na aba Geral."
+msgstr ""
+
+#: includes/class-settings.php:208
+msgid "Salvar configurações"
+msgstr ""
+
+#: includes/class-settings.php:211
+msgid "Como começar"
+msgstr ""
+
+#: includes/class-settings.php:211
+msgid "Ative o WooCommerce e configure as páginas de carrinho e checkout."
+msgstr ""
+
+#: includes/class-settings.php:211
+msgid "Ative a apresentação Portus em Geral. O shortcode e o bloco de carrinho serão apresentados com o layout Portus."
+msgstr ""
+
+#: includes/class-settings.php:211
+msgid "Você também pode usar [portus_cart_page] na página de carrinho."
+msgstr ""
+
+#: includes/class-settings.php:211
+msgid "Ajuste o visual e verifique compras, cupons e frete em uma loja de testes antes de publicar."
+msgstr ""
+
+#: includes/class-settings.php:211
+msgid "A prévia ao lado usa produtos e valores ilustrativos. Frete, impostos, cupons e validações da loja são executados pelo WooCommerce. O plugin não modifica o checkout."
+msgstr ""
+
+#: includes/class-settings.php:211
+msgid "Evite cache de página no carrinho e no checkout. A substituição do Cart Block usa a renderização clássica: extensões exclusivas do bloco precisam ser verificadas separadamente."
+msgstr ""
+
+#: includes/class-settings.php:212
+msgid "Usar com Elementor"
+msgstr ""
+
+#: includes/class-settings.php:213
+msgid "Edite a página definida como carrinho em WooCommerce → Configurações → Avançado. Adicione um único widget Shortcode com [portus_cart_page]. Você pode colocar banners e textos ao redor dele. Configure o interior do carrinho neste painel; os produtos e o resumo não são widgets individuais do Elementor."
+msgstr ""
+
+#: includes/class-settings.php:214
+msgid "Shortcode e bloco de carrinho"
+msgstr ""
+
+#: includes/class-settings.php:215
+msgid "No editor clássico, use [woocommerce_cart] ou [portus_cart_page], apenas uma vez. No editor de blocos, mantenha o Cart Block existente e ative sua substituição em Geral. O Portus apresenta o carrinho clássico sem reescrever a página. Para usar extensões exclusivas do Cart Block, desative essa substituição."
+msgstr ""
+
+#: includes/class-settings.php:216
+msgid "Estoque e quantidades"
+msgstr ""
+
+#: includes/class-settings.php:217
+msgid "O botão + respeita o limite de compra e o estoque do WooCommerce, incluindo vendas sob encomenda quando permitidas. Produtos vendidos individualmente têm limite de uma unidade. Ao usar − com uma unidade, o item é removido pelo WooCommerce, que oferece a opção de desfazer. Sem JavaScript, use o campo de quantidade, Atualizar carrinho e o botão de remoção."
+msgstr ""
+
+#: includes/class-settings.php:218
 msgid "CEP, modalidades e valores de entrega seguem as zonas e integrações de frete do WooCommerce. Habilite a calculadora de entrega nas configurações do WooCommerce para permitir o cálculo no carrinho. Pedidos somente com produtos virtuais não exibem frete. Não são criados prazos ou opções de entrega fictícios."
 msgstr ""
 
-#: includes/class-settings.php:160
+#: includes/class-settings.php:220
 msgid "Restaurar todas as configurações Portus?"
 msgstr ""
 
-#: includes/class-settings.php:160
+#: includes/class-settings.php:220
 msgid "Restaurar padrões"
 msgstr ""
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:221
 msgid "Prévia ilustrativa"
 msgstr ""
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:221
 msgid "PRÉVIA ILUSTRATIVA"
 msgstr ""
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:221
 msgid "Produto de exemplo"
 msgstr ""
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:221
 msgid "Quantidade: 1"
 msgstr ""
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:221
 msgid "Total ilustrativo"
 msgstr ""
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:221
 msgid "Finalizar compra →"
 msgstr ""
 
-#: includes/class-settings.php:161
+#: includes/class-settings.php:221
 msgid "Cores, bordas, fontes e espaçamento acompanham os controles. Para conferir layouts e dados reais, abra o carrinho da loja."
 msgstr ""
 
